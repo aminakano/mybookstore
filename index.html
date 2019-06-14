@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FancyBox -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <title>Hello Bookstore</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- googlefonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hind|Libre+Baskerville:700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="" id="app">
+      <header>
+        <div class="logo">
+
+          <i class="fas fa-atlas"></i>
+          <h1>Hello Bookstore!</h1>
+        </div>
+        <input id="myInput" type="text" name="" value="" placeholder="Search titles" v-model="search">
+        {{search}}
+      </header>
+      <div class="container">
+        <div class="flip-boards" v-for="book in booksArray">
+          <div class="board">
+            <div class="front">
+              <img v-bind:src="book.cover" alt="book" class="covers">
+            </div>
+            <div class="flipped">
+              <h2>{{book.title}}</h2>
+              <p>{{book.description}}</p>
+              <div class="btn">
+                <a v-bind:href="book.detail" data-lightbox="book" class="group" width="100" data-fancybox="gallery">More info</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; Hello Bookstore 2019</p>
+      </footer>
+
+    </div>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- For Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <!-- vue -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="main.js">
+
+    </script>
+  </body>
+</html>
